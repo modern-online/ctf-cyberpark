@@ -17,7 +17,7 @@
     </form>
     <p class="branding">CYBERPARK</p>
     <button onclick="showHint()">Indice</button>
-    <!-- SidhaSB0cm91dsOpICE= -->
+    <!-- VCdlcyBhdSB0b3AgIQ== -->
     <div class="hint-container">
     <div id="hint">Trouve et copie la chaîne encodée, puis cherche "décoder Base64" en ligne pour trouver un outil capable de la décoder.</div>
     </div>
@@ -29,8 +29,9 @@
     <script>
         function checkAnswer(event) {
             event.preventDefault();
+            console.log("success");
             const answer = document.getElementById('answer').value.trim();
-            const secretMessage = solve('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbnN3ZXIiOiJKJ2FpIHRyb3V2w6kgISJ9.sRS4UV_t61FUTVoDiLcq5-7FjIp8xEDarZ86JXbLw9k');
+            const secretMessage = solve('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbnN3ZXIiOiJUJ2VzIGF1IHRvcCAhIn0.-gXcuFhco3Rg5H5wUGstmlMfF0e1OIJubdLvndTRtIw');
             if (answer === secretMessage) {
                 document.getElementById('result').textContent = "C'est correct ! Bien joué !";
                 document.getElementById('result').style.color = "green";

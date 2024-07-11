@@ -27,14 +27,14 @@
     <div id="challenge-container" style="display: block">
         <a href="challenge5.html"><button id="next-challenge" style="display: none;">Prochain challenge</button></a>
     </div>
-    <script src="ici.js"></script>
     <script src="js/decoder.js"></script>
+    <script src="js/ici.js" type="text/javascript"></script>
     <script>
         function checkAnswer(event) {
             event.preventDefault();
             const answer = document.getElementById('answer').value.trim();
             const hiddenMessage = solve(flag);
-            if (answer === secretMessage) {
+            if (answer === hiddenMessage) {
                 document.getElementById('result').textContent = "C'est correct ! Bien joué !";
                 document.getElementById('result').style.color = "green";
                 document.getElementById('next-challenge').style.display = 'block';
