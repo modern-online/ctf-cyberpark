@@ -31,7 +31,7 @@
         event.preventDefault();
         const answer = document.getElementById('answer').value.trim();
         let hiddenFlag = secret;
-        if (answer === secretMessage) {
+        if (answer === hiddenFlag) {
                 document.getElementById('result').textContent = "C'est correct ! Bien joué !";
                 document.getElementById('result').style.color = "green";
                 document.getElementById('next-challenge').style.display = 'block';

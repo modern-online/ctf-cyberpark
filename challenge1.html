@@ -31,7 +31,7 @@
         function checkAnswer(event) {
             event.preventDefault();
             const answer = document.getElementById('answer').value.trim().toLowerCase();
-            const secretMessage = "wesh, wesh?";
+            const secretMessage = "Coucou toi !";
             if (answer === secretMessage) {
                 document.getElementById('result').textContent = "C'est correct ! Bien joué !";
                 document.getElementById('result').style.color = "green";
@@ -47,6 +47,6 @@
             document.getElementById('hint').style.display = 'block';
         }
     </script>
-    <!-- Wesh, wesh? Coucou toi->
+    <!-- Coucou toi ! ->
 </body>
 </html>

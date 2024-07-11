@@ -77,11 +77,12 @@
     <div id="hint">Cherche un outil en ligne appelé STEGONAUT et renseigne-toi dessus.</div>
     </div>
     <p id="result"></p>
+    <script src="js/decoder.js"></script>
     <script>
         function checkAnswer(event) {
             event.preventDefault();
             const answer = document.getElementById('answer').value.trim();
-            const hiddenMessage = "Jul président"; // Replace with your hidden message
+            const hiddenMessage = solve("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiQ3liZXJwYXJrLCBjJ2VzdCBzdXBlciAhIn0.rNYNwQMaCeSZv79DhOGbTbV8Vd9qphiWfcyzIKMizLU");
             if (answer === hiddenMessage) {
                 document.getElementById('result').textContent = "C'est correct ! Bien joué ! Tu as complété tous les défis.";
                 document.getElementById('result').style.color = "green";
