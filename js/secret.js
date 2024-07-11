@@ -1,1 +1,1 @@
-let secret = document.getElementById('hiddenFlag').textContent = "FLAG{YOU_FOUND_ME}";
+let secret = document.getElementById('hiddenFlag').textContent = "WAOUH, LE DRAPEAU !";
