@@ -31,7 +31,7 @@
         function checkAnswer(event) {
             event.preventDefault();
             const answer = document.getElementById('answer').value.trim().toLowerCase();
-            const secretMessage = "Coucou toi !";
+            const secretMessage = "coucou toi !";
             if (answer === secretMessage) {
                 document.getElementById('result').textContent = "C'est correct ! Bien joué !";
                 document.getElementById('result').style.color = "green";
@@ -47,6 +47,6 @@
             document.getElementById('hint').style.display = 'block';
         }
     </script>
-    <!-- Coucou toi ! ->
+    <!-- coucou toi ! ->
 </body>
 </html>
