@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 5: Sous la lune</label></title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .audio-player {
+            margin-top: 10px;
+        }
+
+        .icon-container {
+            position: relative;
+            display: flex;
+            width: 60px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 2px;
+            margin-bottom: 10px;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        .play-button {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            margin: auto;
+            transition: opacity 0.4s;
+        }
+
+        .play-button-inverted {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            transition: opacity 0.4s;
+            opacity: 0;
+        }
+
+        .icon-container:hover {
+            background-color: white;
+        }
+
+        .icon-container:hover .play-button-inverted {
+            opacity: 1;
+        }
+
+        .icon-container:hover .play-button {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">Retour</a>
+    <p>Challenge #5</p>
+    <h1>Sous la lune</h1>
+    <p>Peux-tu trouver le message caché ?</p>
+    <div class="audio-player">
+        <audio id="audio" src="assets/sous_la_lune.mp3"></audio>
+        <div class="icon-container" onclick="playAudio()">
+            <img src="assets/play-pause.svg" class="play-button" alt="play/pause"/>
+            <img src="assets/play-pause-inv.svg" class="play-button-inverted" alt="play/pause"/>
+        </div>
+    </div>
+    <a href="assets/sous_la_lune.mp3" download> >> Télécharger MP3 << </a>
+    <form onsubmit="checkAnswer(event)">
+        <label for="answer">Messsage caché :</label>
+        <input type="text" id="answer" name="answer"><br>
+        <input type="submit" value="Soumettre">
+    </form>
+    <p class="branding">CYBERPARK</p>
+    <button onclick="showHint()">Indice</button>
+    <div class="hint-container">
+    <div id="hint">Cherche des outils qui peuvent extraire des messages cachés des fichiers MP3.</div>
+    </div>
+    <p id="result"></p>
+    <script>
+        function checkAnswer(event) {
+            event.preventDefault();
+            const answer = document.getElementById('answer').value.trim();
+            const hiddenMessage = "Jul président"; // Replace with your hidden message
+            if (answer === hiddenMessage) {
+                document.getElementById('result').textContent = "C'est correct ! Bien joué ! Tu as complété tous les défis.";
+                document.getElementById('result').style.color = "green";
+            } else {
+                document.getElementById('result').textContent = "Essaie encore !";
+                document.getElementById('result').style.color = "red";
+            }
+        }
+
+        function showHint() {
+            document.getElementById('hint').style.display = 'block';
+        }
+
+        let audio = document.getElementById("myAudio");
+   
+        function playAudio() {
+            let audio = document.getElementById('audio');
+            if (!audio.duration > 0 || audio.paused) {
+                audio.play();
+            }
+            else {
+                audio.pause();
+            }
+        }
+   
+    </script>
+</body>
+</html>

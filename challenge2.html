@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 2: Chiffrement</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="index.html" class="home-button">Retour</a>
+    <p>Challenge #2</p>
+    <h1>Chiffrement</h1>
+    <p>Il y a un message codé sur cette page. Peux-tu le décoder ?</p>
+    <form onsubmit="checkAnswer(event)">
+        <label for="answer">Message décodé :</label>
+        <input type="text" id="answer" name="answer"><br>
+        <input type="submit" value="Soumettre">
+    </form>
+    <p class="branding">CYBERPARK</p>
+    <button onclick="showHint()">Indice</button>
+    <!-- U29sdmVkIQ== -->
+    <div class="hint-container">
+    <div id="hint">Trouve et copie la chaîne encodée, puis cherche "décoder Base64" en ligne pour trouver un outil capable de la décoder.</div>
+    </div>
+    <p id="result"></p>
+    <div id="challenge-container" style="display: block">
+        <a href="challenge3.html"><button id="next-challenge" style="display: none;">Prochain challenge</button></a>
+    </div>
+    <script src="js/decoder.js"></script>
+    <script>
+        function checkAnswer(event) {
+            event.preventDefault();
+            const answer = document.getElementById('answer').value.trim();
+            const decodedMessage = solve('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbnN3ZXIiOiJTb2x2ZWQhIn0.3_rPq6zuWMPKB1fUYrxzQNdWA9qrUDPTv1JdA6Roswc');
+            if (answer === secretMessage) {
+                document.getElementById('result').textContent = "C'est correct ! Bien joué !";
+                document.getElementById('result').style.color = "green";
+                document.getElementById('next-challenge').style.display = 'block';
+            } else {
+                document.getElementById('result').textContent = "Essaie encore !";
+                document.getElementById('result').style.color = "red";
+                document.getElementById('next-challenge').style.display = 'none';
+            }
+        }
+
+        function showHint() {
+            document.getElementById('hint').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

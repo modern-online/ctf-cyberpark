@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 4: Jeton</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="index.html" class="home-button">Retour</a>
+    <p>Challenge #4</p>
+    <h1>Token</h1>
+    <p>Peux-tu trouver un code secret et le décoder ?</p>
+    <div>
+    <p id="c'est quoi ça ?" style="display:none" ></p>
+    </div>
+    <form onsubmit="checkAnswer(event)">
+        <label for="answer">Le code secret :</label>
+        <input type="text" id="answer" name="answer"><br>
+        <input type="submit" value="Soumettre">
+    </form>
+    <p class="branding">CYBERPARK</p>
+    <button onclick="showHint()">Indice</button>
+    <div class="hint-container">
+    <div id="hint">Trouve un token web quelque part sur cette page. Utilise un décodeur JWT en ligne pour le décoder. Regarde le contenu (payload) et réfléchis à ce qui se passerait si tu changeais le nom d'utilisateur ou ajoutais de nouvelles valeurs.</div>
+    </div>
+    <p id="result"></p>
+    <div id="challenge-container" style="display: block">
+        <a href="challenge5.html"><button id="next-challenge" style="display: none;">Prochain challenge</button></a>
+    </div>
+    <script src="ici.js"></script>
+    <script src="js/decoder.js"></script>
+    <script>
+        function checkAnswer(event) {
+            event.preventDefault();
+            const answer = document.getElementById('answer').value.trim();
+            const hiddenMessage = solve(flag);
+            if (answer === secretMessage) {
+                document.getElementById('result').textContent = "C'est correct ! Bien joué !";
+                document.getElementById('result').style.color = "green";
+                document.getElementById('next-challenge').style.display = 'block';
+            } else {
+                document.getElementById('result').textContent = "Essaie encore !";
+                document.getElementById('result').style.color = "red";
+                document.getElementById('next-challenge').style.display = 'none';
+            }
+        }
+
+        function showHint() {
+            document.getElementById('hint').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

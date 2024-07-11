@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge #1: Message caché</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="index.html" class="home-button">Retour</a>
+    <p>Challenge #1</p>
+    <h1>Trouve le message caché</h1>
+    <p>Un ami t'a laissé un message caché. Peux-tu le trouver ?</p>
+    
+    <form onsubmit="checkAnswer(event)">
+        <label for="answer">Le message cachée :</label>
+        <input type="text" id="answer" name="answer"><br>
+        <input type="submit" value="Soumettre">
+    </form>
+
+    <p class="branding">CYBERPARK</p>
+    <button onclick="showHint()">Indice</button>
+    <div class="hint-container">
+        <div id="hint">Clique droit sur la page, sélectionne "Afficher la source de la page" ou "Inspecter", et cherche des commentaires dans le code HTML.</div>
+    </div>
+    <p id="result"></p>
+    <div id="challenge-container" style="display: block">
+        <a href="challenge2.html"><button id="next-challenge" style="display: none;">Prochain challenge</button></a>
+    </div>
+
+    <script>
+        function checkAnswer(event) {
+            event.preventDefault();
+            const answer = document.getElementById('answer').value.trim().toLowerCase();
+            const secretMessage = "wesh, wesh?";
+            if (answer === secretMessage) {
+                document.getElementById('result').textContent = "C'est correct ! Bien joué !";
+                document.getElementById('result').style.color = "green";
+                document.getElementById('next-challenge').style.display = 'block';
+            } else {
+                document.getElementById('result').textContent = "Essaie encore !";
+                document.getElementById('result').style.color = "red";
+                document.getElementById('next-challenge').style.display = 'none';
+            }
+        }
+
+        function showHint() {
+            document.getElementById('hint').style.display = 'block';
+        }
+    </script>
+    <!-- Wesh, wesh? Coucou toi->
+</body>
+</html>

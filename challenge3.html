@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 3: Trouver le drapeau</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="index.html" class="home-button">Retour</a>
+    <p>Challenge #3</p>
+    <h1>Trouver le drapeau</h1>
+    <p>A flag is hidden somewhere. Can you find it?</p>
+    <form onsubmit="checkAnswer(event)">
+        <label for="answer">Le drapeau:</label>
+        <input type="text" id="answer" name="answer"><br>
+        <input type="submit" value="Soumettre">
+    </form>
+    <div><div><div id="hiddenFlag" style="display: none; padding-top: 20px; color: green"></div></div></div>
+    <p class="branding">CYBERPARK</p>
+    <button onclick="showHint()">Indice</button>
+    <div class="hint-container">
+    <div id="hint">Cherche "display: none" dans l'onglet "Éléments" des outils de développement.</div>
+    </div>
+    <p id="result"></p>
+    <div id="challenge-container" style="display: block">
+        <a href="challenge4.html"><button id="next-challenge" style="display: none;">Prochain challenge</button></a>
+    </div>
+    <script src="js/secret.js"></script>
+    <script>
+        function checkAnswer(event) {
+        event.preventDefault();
+        const answer = document.getElementById('answer').value.trim();
+        let hiddenFlag = secret;
+        if (answer === secretMessage) {
+                document.getElementById('result').textContent = "C'est correct ! Bien joué !";
+                document.getElementById('result').style.color = "green";
+                document.getElementById('next-challenge').style.display = 'block';
+            } else {
+                document.getElementById('result').textContent = "Essaie encore !";
+                document.getElementById('result').style.color = "red";
+                document.getElementById('next-challenge').style.display = 'none';
+            }
+    }
+
+    function showHint() {
+        document.getElementById('hint').style.display = 'block';
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: Poppins, Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    margin: 0;
+}
+
+.main-title {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    font-family: Poppins;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.home-button:hover {
+    background-color: white;
+    color:black;
+    text-decoration: none;
+}
+
+.branding {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+
+}
+
+.hint-container {
+    margin-top: 40px;
+    min-height: 80px; /* Adjust the height based on your hint content */
+}
+
+#challenge-container {
+    min-height: 50px;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    font-family: Arial;
+    color: white;
+    font-size: 18px;
+    min-height: 20px;
+}
+
+form {
+    background-color: black;
+    margin-top: 20px;
+    padding: 40px;  
+    border-radius: 2px;
+    border: 2px solid white;
+    max-width: 400px;
+    width: 100%;
+}
+
+label {
+    font-family: Arial;
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    width: 96%;
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    padding: 10px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+
+}
+
+#result {
+    min-height: 30px; 
+    font-weight: bold;
+}
+
+#challenge-container {
+    min-height: 80px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    font-family: Arial;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+button {
+    background-color: #3762fa;
+    color: white;
+    border: 2px solid #3762fa;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+#hint {
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+    display: none;
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+}
